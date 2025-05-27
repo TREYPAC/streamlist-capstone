@@ -36,3 +36,11 @@
     transform: rotate(360deg);
   }
 }
+.logo-container {
+  padding: 10px 20px;
+}
+
+.logo-badge {
+  width: 100px;
+  opacity: 0.9;
+}
