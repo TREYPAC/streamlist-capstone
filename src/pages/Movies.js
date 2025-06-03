@@ -7,7 +7,7 @@ function Movies() {
       className="movies-page"
       style={{
         backgroundImage: `url(${process.env.PUBLIC_URL + '/blocked-grid.png'})`,
-        backgroundSize: '80%', // changed from 'cover' to 80% to shrink image
+        backgroundSize: '80%', 
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         minHeight: '100vh',

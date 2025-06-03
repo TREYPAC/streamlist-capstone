@@ -7,7 +7,7 @@ import Movies from './pages/Movies';
 import Cart from './pages/Cart';
 import About from './pages/About';
 import Search from './pages/Search';
-import Watchlist from './pages/Watchlist'; // ✅ Import only — no Route here
+import Watchlist from './pages/Watchlist'; 
 
 import './App.css';
 
@@ -26,7 +26,7 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/about" element={<About />} />
         <Route path="/search" element={<Search />} />
-        <Route path="/watchlist" element={<Watchlist />} /> {/* ✅ Correct placement */}
+        <Route path="/watchlist" element={<Watchlist />} /> 
       </Routes>
     </>
   );
