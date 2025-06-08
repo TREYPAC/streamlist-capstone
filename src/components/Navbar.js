@@ -14,6 +14,9 @@ function Navbar() {
       <NavLink to="/search" className="nav-link" activeClassName="active">
         Search
       </NavLink>
+      <NavLink to="/subscriptions" className="nav-link" activeClassName="active">
+        Subscriptions
+      </NavLink>
       <NavLink to="/cart" className="nav-link" activeClassName="active">
         Cart
       </NavLink>
