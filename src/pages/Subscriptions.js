@@ -1,41 +1,26 @@
+// src/pages/Subscriptions.js
 import React, { useContext } from 'react';
 import { CartContext } from '../context/CartContext';
 import list from '../data/data';
-import localSocialImg from '../assets/social-subscription.png'; // only if needed
+import SubscriptionItem from '../components/SubscriptionItem'; // Import the new component
+// Remove localSocialImg import as it's now in SubscriptionItem
 
 function Subscriptions() {
   const { addToCart } = useContext(CartContext);
 
-  const getImageSrc = (img) => {
-    if (img === 'local_social') {
-      return localSocialImg;
-    }
-    return img;
-  };
+  // getImageSrc is no longer needed here if moved to SubscriptionItem
+  // const getImageSrc = (img) => { ... };
 
   return (
     <div style={{ padding: 20 }}>
       <h2>Subscription Details</h2>
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: 20 }}>
         {list.map((item) => (
-          <div key={item.id} style={{ border: '1px solid #ccc', padding: 10, width: 200 }}>
-            <img
-              src={getImageSrc(item.img)}
-              alt={item.service}
-              width="100%"
-              height="150"
-              style={{ objectFit: 'cover' }}
-              onError={(e) => {
-                e.target.src = 'https://via.placeholder.com/150?text=No+Image';
-              }}
-            />
-            <h3>{item.service}</h3>
-            <p>{item.serviceInfo}</p>
-            <p><strong>${item.price.toFixed(2)}</strong></p>
-            <button onClick={() => addToCart({ ...item, quantity: 1 })}>
-              Add to Cart
-            </button>
-          </div>
+          <SubscriptionItem // Use the new component here
+            key={item.id} // Keep the key prop
+            item={item} // Pass the item data
+            onAddToCart={addToCart} // Pass the addToCart function
+          />
         ))}
       </div>
     </div>
